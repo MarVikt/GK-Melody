@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box; /* внутр.отступы вместе с рамкой находятся в указанных пределах широты и высоты */
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.header {
+    background-color: #635854;
+    padding-top: 12px; /* внутренний отступ сверху */
+    padding-bottom: 12px;
+    border-bottom: 4px solid #3596F5; /* если просто border, то полностью рамка сплошной линией */
+}
+.navbar {
+    max-width: 1280px;
+    margin: auto; /* внешние отступы автоматические */
+    display: flex; /* сделали блок гибким */
+    justify-content: space-between; /* равномерно распределить по ширине */
+    align-items: center; /* выровняли по высоте */
+}
+.navbar-menu {
+    margin: 0; /* убрали все внешние отступы */
+    padding: 0; /* убрали внутренние отступы */
+    list-style: none; /* убрали точки списка */
+    display: flex; /* список выстроился по горизонтали */
+    text-align: center; /* каждый элемент списка отцентрирован в своем столбце */
+}
+.navbar-item {
+    margin-left: 40px; /* отступы слева и справа у элементов списка*/
+    margin-right: 40px;
+}
+.navbar-link {
+    text-decoration: none; /* убрали подчеркивание текста в списке */
+    color: #fff;
+}
+.navbar-contacts {
+    text-align: right; /* текст прижали вправо */
+}
+.navbar-text {
+    display: block; /* занимает всю строку */
+    color: #fff;
+    margin-bottom: 4px;  /* отступ вниз после Закажите звонок */
+    font-size: 14px;
+    line-height: 16px;
+}
+.navbar-phone {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #fff;
+}
