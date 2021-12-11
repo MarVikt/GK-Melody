@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Bebas Neue Cyrillic';
+    src: local('Bebas Neue Cyrillic'), local('BebasNeueCyrillic'),
+        url('../fonts/BebasNeueCyrillic.woff2') format('woff2'),
+        url('../fonts/BebasNeueCyrillic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue Regular Regular'), local('BebasNeueRegular'),
+        url('../fonts/BebasNeueRegular.woff2') format('woff2'),
+        url('../fonts/BebasNeueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     box-sizing: border-box; /* внутр.отступы вместе с рамкой находятся в указанных пределах широты и высоты */
 }
@@ -48,4 +68,62 @@ body {
     line-height: 20px;
     text-decoration: none;
     color: #fff;
+}
+.main {
+    max-width: 1280px;
+    margin: auto; /* внешние отступы автоматические */
+    padding-top: 54px; /* отступ сверху */
+    display: flex;
+}
+.main-choosing-floor {
+    flex-grow: 1; /* этот блок займет все оставшшеся справа место */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+}
+.main-title {
+    margin: 0;
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 44px;
+    color: #635854;
+}
+.house path {
+    opacity: 0; /* свойство полной прозрачности для элементов path */
+    cursor: pointer; /* палец вместо курсора мышки */
+}
+.house path:hover {
+    opacity: 1; /* свойство видимости при наведении мышкой для элементов path */
+}
+.counter {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    color: #635854;
+    font-size: 124px;
+    margin-bottom: 10px;
+}
+.counter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.counter-button {
+    background-color: #fff;
+    border: none; /* убрали рамки вокруг кнопок */
+    cursor: pointer; /* палец вместо курсора мышки */
+}
+.counter-arrow-down {
+    transform: rotateX(180deg);
+}
+.button-primery {
+    background: #3596F5;
+    border-radius: 6px;    /* закруглили углы кнопки */
+    color: #fff;
+    border: none; /* убрали рамки вокруг кнопок */
+    padding: 16px 36px; /* внутри кнопки отступ сверху и снизу по 16, слева и справа по 36 */
+    cursor: pointer; /* палец вместо курсора мышки */
+    margin-bottom: 5px;
+
 }
