@@ -98,6 +98,9 @@ body {
 .house path:hover {
     opacity: 1; /* свойство видимости при наведении мышкой для элементов path */
 }
+path.current-floor {
+    opacity: 1;
+}
 .counter {
     font-family: "Bebas Neue Cyrillic", sans-serif;
     color: #635854;
