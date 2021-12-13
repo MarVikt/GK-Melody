@@ -4,6 +4,9 @@ $(document).ready(function () {
     var floorPath = $(".house path");
     var counterUp = $(".counter-up");
     var counterDown = $(".counter-down");
+    var modal = $(".modal");
+    var modalCloseButton = $(".modal-close-button");
+    var viewFlatButton = $(".view-flat");
  
 console.log('сайт готов к манипуляциям');  
 
@@ -24,6 +27,18 @@ floorPath.on("mouseover", function () {
     $(".counter").text(ascurrentFloor);
     $(`[data-floor=${ascurrentFloor}]`).toggleClass("current-floor");; // назначили класс текущему path. А в стилях объявили видимость этого класса
 });
+
+// floorPath.on("click", function () {
+//     modal.toggleClass("is-open");
+// })
+
+// modalCloseButton.on("click", function () {
+//     modal.toggleClass("is-open");
+// })
+
+floorPath.on("click", toggleModal); // при клике на этаж вызвать окно с планом квартир
+modalCloseButton.on("click", toggleModal);  // при клике на крестик закрыть окно с планом квартир
+viewFlatButton.on("click", toggleModal); 
 
 counterUp.on("click", function () {
     console.log('кликнули по кнопке выбора этажа вверх');
@@ -53,7 +68,9 @@ counterDown.on("click", function () {
     }
 });
 
-
+function toggleModal () {
+    modal.toggleClass("is-open"); 
+}
 
 
 });

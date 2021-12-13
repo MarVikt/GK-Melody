@@ -101,7 +101,7 @@ body {
 path.current-floor {
     opacity: 1;
 }
-.counter {
+.floor-counter {
     font-family: "Bebas Neue Cyrillic", sans-serif;
     color: #635854;
     font-size: 124px;
@@ -128,5 +128,99 @@ path.current-floor {
     padding: 16px 36px; /* внутри кнопки отступ сверху и снизу по 16, слева и справа по 36 */
     cursor: pointer; /* палец вместо курсора мышки */
     margin-bottom: 5px;
+}
+.modal {
+    position: fixed; /* закрепляем поверх сайта */
+    left: 0; /* приклеем к левому верхнему углу*/
+    top: 0;
+    width: 100%; /* перекрывает сайт по ширине полностью */
+    height: 100%; /* и по высоте тоже полностью */
+    background-color: rgba(0, 0, 0, 0.8); /* полупрозрачный черный цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* окно первоначально не видно */
+    transform: scale(0); /* и сжато в ноль */
+    transition: opacity 0.2s; /* окно появится плавно в течении 0,2 секунды */
+}
+.is-open {
+    opacity: 1;
+    transform: scale(1);
+}
+.modal-dialog {
+    position: relative;
+    max-width: 1000px;
+    min-height: 565px;
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    opacity: 0;
+    transform: translateY(-10%); /* отодвинули на 10% вверх */
+    transition: transform 0.2s, opacity 0.2s; /* отодвигается с задержкой 0,2 секунды*/
+    transition-delay: 0.2s; /* сначала появится серый фон, а потом спустя 0,2 сек окно с планом этажа */
+}
+.is-open > .modal-dialog {
+    opacity: 1;
+    transform: translateY(0); /* вернули обратно */
+}
+.modal-image {
+    background: #EBEBEB;
+    width: 60%;
+    text-align: center;
+    padding: 50px;
+}
+.flats path{
+    opacity: 0;
+    cursor: pointer;
+}
+.flats path:hover{
+    opacity: 1;
+}
 
+.modal-title {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.modal-info {
+    padding: 50px 46px; /* внутри секции отступ сверху и снизу по 56, слева и справа по 46 */
+    width: 40%;
+}
+.flat-list {
+    padding: 0;
+    list-style: none;
+    margin-top: 55px;
+}
+.flat-item {
+    margin-bottom: 10px;
+}
+.flat-link {
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
+    text-decoration: none;
+}
+.flat-link:hover {
+    text-decoration-line: underline; /* при наведении мышкой строка становится голубой и подчеркивается */
+    color: #3596F5;
+}
+.modal-alert {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
+    margin-top: 56px;
+}
+.modal-close-button {
+    position: absolute;
+    right: 27px; /* приклеем к правому верхнему углу*/
+    top: 38px;
+    cursor: pointer;
+    border:none;
+    background-color: #fff;
 }
